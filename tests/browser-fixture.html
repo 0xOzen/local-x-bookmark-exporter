@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="data:,">
+  <title>Local X Bookmark Exporter browser fixture</title>
+</head>
+<body>
+  <article data-testid="tweet">
+    <div data-testid="User-Name">
+      <a href="/ada"><span>Ada Lovelace</span></a>
+      <a href="/ada"><span>@ada</span></a>
+    </div>
+    <a href="/ada/status/1001"><time datetime="2026-07-10T10:00:00.000Z">Jul 10</time></a>
+    <div data-testid="tweetText" lang="en">Analytical engines and careful notes.</div>
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==#pbs.twimg.com/media/example-one.jpg" alt="fixture media">
+    <button data-testid="removeBookmark">Remove bookmark</button>
+  </article>
+
+  <article data-testid="tweet">
+    <div data-testid="User-Name">
+      <a href="/grace"><span>Grace Hopper</span></a>
+      <a href="/grace"><span>@grace</span></a>
+    </div>
+    <a href="https://x.com/grace/status/1002?utm_source=test"><time datetime="2026-07-11T11:30:00.000Z">Jul 11</time></a>
+    <div data-testid="tweetText" lang="en">A compiler note with a comma, a | pipe, and a &quot;quote&quot;.</div>
+    <video poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==#pbs.twimg.com/ext_tw_video_thumb/example-two.jpg"></video>
+    <button data-testid="removeBookmark">Remove bookmark</button>
+  </article>
+
+  <article data-testid="tweet">
+    <a href="/not-bookmarked/status/9999"><time datetime="2026-07-09T08:00:00.000Z">Jul 9</time></a>
+    <div data-testid="tweetText">This must not be exported.</div>
+  </article>
+
+  <pre id="results">RUNNING</pre>
+
+  <script>
+    window.__fixtureMessageHandler = null;
+    window.__fixtureBlob = null;
+    window.__fixtureDownloadName = null;
+    window.chrome = {
+      runtime: {
+        onMessage: {
+          addListener(handler) { window.__fixtureMessageHandler = handler; }
+        }
+      }
+    };
+    URL.createObjectURL = (blob) => {
+      window.__fixtureBlob = blob;
+      return "blob:janus-fixture";
+    };
+    URL.revokeObjectURL = () => {};
+    HTMLAnchorElement.prototype.click = function () {
+      if (this.download) window.__fixtureDownloadName = this.download;
+    };
+  </script>
+  <script src="../lib.js"></script>
+  <script src="../scraper.js"></script>
+  <script src="../i18n.js"></script>
+  <script src="../content.js"></script>
+  <script>
+    (async () => {
+      const checks = [];
+      function assert(condition, message) {
+        if (!condition) throw new Error(message);
+        checks.push(message);
+      }
+
+      const visible = LocalXBookmarkScraper.collectBookmarks(document, "2026-07-12T12:00:00.000Z");
+      assert(visible.length === 2, "DOM scraper keeps only bookmarked cards");
+      assert(visible[0].id === "1001" && visible[0].authorHandle === "ada", "canonical ID and author are extracted");
+      assert(visible[0].authorName === "Ada Lovelace", "display name is extracted");
+      assert(visible[0].mediaUrls.length === 1, "image media is extracted");
+      assert(visible[1].mediaUrls[0].includes("ext_tw_video_thumb"), "video poster is extracted");
+      assert(LocalXBookmarkLib.normalizeStatusUrl("https://x.com/grace/status/1002?x=1") === "https://x.com/grace/status/1002", "status URLs are normalized");
+      assert(LocalXBookmarkI18n.t("startButton") === "Start export", "English localization fallback is available");
+      assert(LocalXBookmarkI18n.t("scanProgress", [3, 1]) === "Scan pass 3. Passes with no new records: 1.", "localization placeholders are substituted");
+
+      let response = null;
+      window.__fixtureMessageHandler(
+        {
+          type: "LOCAL_X_START_BOOKMARK_EXPORT",
+          options: { format: "json", maxBookmarks: 2, maxIdleRounds: 3, scrollDelayMs: 800 }
+        },
+        {},
+        (value) => { response = value; }
+      );
+
+      assert(response?.ok === true, "content-script export starts");
+      assert(window.__fixtureBlob instanceof Blob, "export creates a local Blob");
+      assert(window.__fixtureDownloadName?.endsWith(".json"), "export creates a JSON download name");
+
+      const payload = JSON.parse(await window.__fixtureBlob.text());
+      assert(payload.meta.count === 2, "downloaded payload contains both bookmarks");
+      assert(payload.meta.stopReason === "configured-limit", "configured completion reason is recorded");
+      assert(payload.meta.completeness.includes("best-effort"), "completeness limitation is explicit");
+      assert(payload.bookmarks[1].text.includes("comma"), "full visible text reaches the payload");
+
+      const csv = LocalXBookmarkLib.toCsv(payload.bookmarks);
+      assert(csv.startsWith("\uFEFF"), "CSV includes a UTF-8 BOM");
+      assert(csv.includes('"A compiler note with a comma, a | pipe, and a ""quote""."'), "CSV quoting is correct");
+
+      document.getElementById("results").textContent = `PASS ${checks.length} checks\n${checks.join("\n")}`;
+      document.body.dataset.testResult = "PASS";
+    })().catch((error) => {
+      document.getElementById("results").textContent = `FAIL\n${error.stack || error}`;
+      document.body.dataset.testResult = "FAIL";
+    });
+  </script>
+</body>
+</html>

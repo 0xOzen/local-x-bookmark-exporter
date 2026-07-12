@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Local X Bookmark Exporter"
+  },
+  "appDescription": {
+    "message": "Export rendered X bookmark cards to JSON, CSV, or Markdown without API keys or a backend."
+  },
+  "localOnly": {
+    "message": "LOCAL ONLY"
+  },
+  "popupTitle": {
+    "message": "X Bookmark Exporter"
+  },
+  "intro": {
+    "message": "Reads bookmark cards from the open X bookmarks page. It does not collect passwords, cookies, or session tokens."
+  },
+  "formatLabel": {
+    "message": "Export format"
+  },
+  "formatJson": {
+    "message": "JSON (recommended)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Advanced settings"
+  },
+  "delayLabel": {
+    "message": "Wait between scrolls"
+  },
+  "delay1200": {
+    "message": "1.2 seconds"
+  },
+  "delay1800": {
+    "message": "1.8 seconds (recommended)"
+  },
+  "delay2500": {
+    "message": "2.5 seconds"
+  },
+  "idleLabel": {
+    "message": "Stop after no new records"
+  },
+  "idle6": {
+    "message": "6 passes"
+  },
+  "idle10": {
+    "message": "10 passes (recommended)"
+  },
+  "idle15": {
+    "message": "15 passes"
+  },
+  "maxBookmarksLabel": {
+    "message": "Maximum bookmarks (0 = unlimited)"
+  },
+  "startButton": {
+    "message": "Start export"
+  },
+  "initialStatus": {
+    "message": "Open x.com/i/bookmarks first."
+  },
+  "privacyText": {
+    "message": "Privacy: Data is processed only in the active tab and downloaded directly to your device. No backend is used."
+  },
+  "checkingTab": {
+    "message": "Checking the active tab..."
+  },
+  "openBookmarksError": {
+    "message": "Open x.com/i/bookmarks first, then try again."
+  },
+  "exportCouldNotStart": {
+    "message": "Export could not start."
+  },
+  "startedStatus": {
+    "message": "Export started. Keep the tab open; progress appears in the lower-right corner."
+  },
+  "panelBadge": {
+    "message": "LOCAL EXPORT"
+  },
+  "panelRunningTitle": {
+    "message": "Reading bookmarks"
+  },
+  "stopButton": {
+    "message": "Stop"
+  },
+  "closeButton": {
+    "message": "Close"
+  },
+  "recordsFound": {
+    "message": "unique bookmarks found"
+  },
+  "keepOpen": {
+    "message": "Keep this tab open. Data is processed only in this tab."
+  },
+  "stopping": {
+    "message": "Stopping. Collected records will be written to a file..."
+  },
+  "scanProgress": {
+    "message": "Scan pass $CYCLE$. Passes with no new records: $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Export failed"
+  },
+  "panelCompleteTitle": {
+    "message": "Export complete"
+  },
+  "alreadyRunning": {
+    "message": "An export is already running."
+  },
+  "noBookmarksFound": {
+    "message": "No bookmark cards were found. Wait for the page to load, then try again."
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ records were saved to your Downloads folder.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

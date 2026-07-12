@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Exportador local de marcadores de X"
+  },
+  "appDescription": {
+    "message": "Exporta los marcadores visibles de X a JSON, CSV o Markdown sin claves de API ni servidor externo."
+  },
+  "localOnly": {
+    "message": "SOLO LOCAL"
+  },
+  "popupTitle": {
+    "message": "Exportador de marcadores de X"
+  },
+  "intro": {
+    "message": "Lee las tarjetas de la página de marcadores de X abierta. No recopila contraseñas, cookies ni tokens de sesión."
+  },
+  "formatLabel": {
+    "message": "Formato de exportación"
+  },
+  "formatJson": {
+    "message": "JSON (recomendado)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Ajustes avanzados"
+  },
+  "delayLabel": {
+    "message": "Espera entre desplazamientos"
+  },
+  "delay1200": {
+    "message": "1,2 segundos"
+  },
+  "delay1800": {
+    "message": "1,8 segundos (recomendado)"
+  },
+  "delay2500": {
+    "message": "2,5 segundos"
+  },
+  "idleLabel": {
+    "message": "Detener si no aparecen registros nuevos"
+  },
+  "idle6": {
+    "message": "6 pasadas"
+  },
+  "idle10": {
+    "message": "10 pasadas (recomendado)"
+  },
+  "idle15": {
+    "message": "15 pasadas"
+  },
+  "maxBookmarksLabel": {
+    "message": "Máximo de marcadores (0 = sin límite)"
+  },
+  "startButton": {
+    "message": "Iniciar exportación"
+  },
+  "initialStatus": {
+    "message": "Abre primero x.com/i/bookmarks."
+  },
+  "privacyText": {
+    "message": "Privacidad: Los datos se procesan solo en la pestaña activa y se descargan directamente en tu dispositivo. No se usa ningún servidor externo."
+  },
+  "checkingTab": {
+    "message": "Comprobando la pestaña activa..."
+  },
+  "openBookmarksError": {
+    "message": "Abre primero x.com/i/bookmarks y vuelve a intentarlo."
+  },
+  "exportCouldNotStart": {
+    "message": "No se pudo iniciar la exportación."
+  },
+  "startedStatus": {
+    "message": "La exportación ha comenzado. Mantén la pestaña abierta; el progreso aparece abajo a la derecha."
+  },
+  "panelBadge": {
+    "message": "EXPORTACIÓN LOCAL"
+  },
+  "panelRunningTitle": {
+    "message": "Leyendo marcadores"
+  },
+  "stopButton": {
+    "message": "Detener"
+  },
+  "closeButton": {
+    "message": "Cerrar"
+  },
+  "recordsFound": {
+    "message": "marcadores únicos encontrados"
+  },
+  "keepOpen": {
+    "message": "Mantén esta pestaña abierta. Los datos se procesan solo aquí."
+  },
+  "stopping": {
+    "message": "Deteniendo. Los registros encontrados se guardarán en un archivo..."
+  },
+  "scanProgress": {
+    "message": "Pasada $CYCLE$. Pasadas sin registros nuevos: $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Error de exportación"
+  },
+  "panelCompleteTitle": {
+    "message": "Exportación completada"
+  },
+  "alreadyRunning": {
+    "message": "Ya hay una exportación en curso."
+  },
+  "noBookmarksFound": {
+    "message": "No se encontraron tarjetas de marcadores. Espera a que cargue la página y vuelve a intentarlo."
+  },
+  "downloadComplete": {
+    "message": "Se guardaron $COUNT$ registros en la carpeta Descargas.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

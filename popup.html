@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="appName">Local X Bookmark Exporter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <div class="eyebrow" data-i18n="localOnly">LOCAL ONLY</div>
+    <h1 data-i18n="popupTitle">X Bookmark Exporter</h1>
+    <p class="intro" data-i18n="intro">Reads bookmark cards from the open X bookmarks page. It does not collect passwords, cookies, or session tokens.</p>
+
+    <label>
+      <span data-i18n="formatLabel">Export format</span>
+      <select id="format">
+        <option value="json" data-i18n="formatJson">JSON (recommended)</option>
+        <option value="csv" data-i18n="formatCsv">CSV</option>
+        <option value="markdown" data-i18n="formatMarkdown">Markdown</option>
+      </select>
+    </label>
+
+    <details>
+      <summary data-i18n="advancedSettings">Advanced settings</summary>
+      <label>
+        <span data-i18n="delayLabel">Wait between scrolls</span>
+        <select id="delay">
+          <option value="1200" data-i18n="delay1200">1.2 seconds</option>
+          <option value="1800" selected data-i18n="delay1800">1.8 seconds (recommended)</option>
+          <option value="2500" data-i18n="delay2500">2.5 seconds</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="idleLabel">Stop after no new records</span>
+        <select id="idleRounds">
+          <option value="6" data-i18n="idle6">6 passes</option>
+          <option value="10" selected data-i18n="idle10">10 passes (recommended)</option>
+          <option value="15" data-i18n="idle15">15 passes</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="maxBookmarksLabel">Maximum bookmarks (0 = unlimited)</span>
+        <input id="maxBookmarks" type="number" min="0" step="1" value="0">
+      </label>
+    </details>
+
+    <button id="start" type="button" data-i18n="startButton">Start export</button>
+    <p id="status" role="status" data-i18n="initialStatus">Open x.com/i/bookmarks first.</p>
+
+    <div class="privacy" data-i18n="privacyText">Privacy: Data is processed only in the active tab and downloaded directly to your device. No backend is used.</div>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

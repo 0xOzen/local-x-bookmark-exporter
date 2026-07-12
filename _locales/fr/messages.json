@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Exportateur local de favoris X"
+  },
+  "appDescription": {
+    "message": "Exporte les favoris X visibles en JSON, CSV ou Markdown, sans clé API ni serveur externe."
+  },
+  "localOnly": {
+    "message": "LOCAL UNIQUEMENT"
+  },
+  "popupTitle": {
+    "message": "Exportateur de favoris X"
+  },
+  "intro": {
+    "message": "Lit les cartes de favoris sur la page X ouverte. Aucun mot de passe, cookie ou jeton de session n'est collecté."
+  },
+  "formatLabel": {
+    "message": "Format d'export"
+  },
+  "formatJson": {
+    "message": "JSON (recommandé)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Paramètres avancés"
+  },
+  "delayLabel": {
+    "message": "Attente entre les défilements"
+  },
+  "delay1200": {
+    "message": "1,2 seconde"
+  },
+  "delay1800": {
+    "message": "1,8 seconde (recommandé)"
+  },
+  "delay2500": {
+    "message": "2,5 secondes"
+  },
+  "idleLabel": {
+    "message": "Arrêter si aucun nouvel élément n'apparaît"
+  },
+  "idle6": {
+    "message": "6 passages"
+  },
+  "idle10": {
+    "message": "10 passages (recommandé)"
+  },
+  "idle15": {
+    "message": "15 passages"
+  },
+  "maxBookmarksLabel": {
+    "message": "Nombre maximal de favoris (0 = illimité)"
+  },
+  "startButton": {
+    "message": "Démarrer l'export"
+  },
+  "initialStatus": {
+    "message": "Ouvrez d'abord x.com/i/bookmarks."
+  },
+  "privacyText": {
+    "message": "Confidentialité : les données sont traitées uniquement dans l'onglet actif et téléchargées directement sur votre appareil. Aucun serveur externe n'est utilisé."
+  },
+  "checkingTab": {
+    "message": "Vérification de l'onglet actif..."
+  },
+  "openBookmarksError": {
+    "message": "Ouvrez d'abord x.com/i/bookmarks, puis réessayez."
+  },
+  "exportCouldNotStart": {
+    "message": "Impossible de démarrer l'export."
+  },
+  "startedStatus": {
+    "message": "L'export a commencé. Gardez l'onglet ouvert ; la progression s'affiche en bas à droite."
+  },
+  "panelBadge": {
+    "message": "EXPORT LOCAL"
+  },
+  "panelRunningTitle": {
+    "message": "Lecture des favoris"
+  },
+  "stopButton": {
+    "message": "Arrêter"
+  },
+  "closeButton": {
+    "message": "Fermer"
+  },
+  "recordsFound": {
+    "message": "favoris uniques trouvés"
+  },
+  "keepOpen": {
+    "message": "Gardez cet onglet ouvert. Les données sont traitées uniquement ici."
+  },
+  "stopping": {
+    "message": "Arrêt en cours. Les éléments trouvés seront enregistrés dans un fichier..."
+  },
+  "scanProgress": {
+    "message": "Passage $CYCLE$. Passages sans nouvel élément : $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Échec de l'export"
+  },
+  "panelCompleteTitle": {
+    "message": "Export terminé"
+  },
+  "alreadyRunning": {
+    "message": "Un export est déjà en cours."
+  },
+  "noBookmarksFound": {
+    "message": "Aucune carte de favori trouvée. Attendez le chargement de la page, puis réessayez."
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ éléments ont été enregistrés dans le dossier Téléchargements.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

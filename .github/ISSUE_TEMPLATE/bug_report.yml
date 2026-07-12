@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a reproducible problem without exposing private bookmark data
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach a real bookmark export, cookie, token, or unsanitized page HTML.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version or commit
+      placeholder: 1.1.0
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Chrome 150.0.x
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: macOS, Windows, or Linux
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use fictional or sanitized examples.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy check
+      description: Confirm that logs and screenshots contain no private bookmark or account data.
+      placeholder: I reviewed the attached material and removed private data.
+    validations:
+      required: true

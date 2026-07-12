@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "ローカル X ブックマークエクスポーター"
+  },
+  "appDescription": {
+    "message": "API キーや外部サーバーを使わず、表示された X ブックマークを JSON、CSV、Markdown で書き出します。"
+  },
+  "localOnly": {
+    "message": "ローカル処理のみ"
+  },
+  "popupTitle": {
+    "message": "X ブックマークエクスポーター"
+  },
+  "intro": {
+    "message": "開いている X のブックマークページからカードを読み取ります。パスワード、Cookie、セッショントークンは収集しません。"
+  },
+  "formatLabel": {
+    "message": "書き出し形式"
+  },
+  "formatJson": {
+    "message": "JSON（推奨）"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "詳細設定"
+  },
+  "delayLabel": {
+    "message": "スクロール間の待機時間"
+  },
+  "delay1200": {
+    "message": "1.2 秒"
+  },
+  "delay1800": {
+    "message": "1.8 秒（推奨）"
+  },
+  "delay2500": {
+    "message": "2.5 秒"
+  },
+  "idleLabel": {
+    "message": "新しい項目がない場合に停止"
+  },
+  "idle6": {
+    "message": "6 回"
+  },
+  "idle10": {
+    "message": "10 回（推奨）"
+  },
+  "idle15": {
+    "message": "15 回"
+  },
+  "maxBookmarksLabel": {
+    "message": "最大ブックマーク数（0 = 無制限）"
+  },
+  "startButton": {
+    "message": "エクスポート開始"
+  },
+  "initialStatus": {
+    "message": "まず x.com/i/bookmarks を開いてください。"
+  },
+  "privacyText": {
+    "message": "プライバシー: データはアクティブなタブ内だけで処理され、端末に直接ダウンロードされます。外部サーバーは使いません。"
+  },
+  "checkingTab": {
+    "message": "アクティブなタブを確認しています..."
+  },
+  "openBookmarksError": {
+    "message": "x.com/i/bookmarks を開いてから、もう一度お試しください。"
+  },
+  "exportCouldNotStart": {
+    "message": "エクスポートを開始できませんでした。"
+  },
+  "startedStatus": {
+    "message": "エクスポートを開始しました。タブを開いたままにしてください。進行状況は右下に表示されます。"
+  },
+  "panelBadge": {
+    "message": "ローカルエクスポート"
+  },
+  "panelRunningTitle": {
+    "message": "ブックマークを読み取り中"
+  },
+  "stopButton": {
+    "message": "停止"
+  },
+  "closeButton": {
+    "message": "閉じる"
+  },
+  "recordsFound": {
+    "message": "件の一意なブックマークを検出"
+  },
+  "keepOpen": {
+    "message": "このタブを開いたままにしてください。データはこのタブ内だけで処理されます。"
+  },
+  "stopping": {
+    "message": "停止しています。取得済みの項目をファイルに保存します..."
+  },
+  "scanProgress": {
+    "message": "スキャン $CYCLE$ 回目。新しい項目がなかった回数: $IDLE$。",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "エクスポート失敗"
+  },
+  "panelCompleteTitle": {
+    "message": "エクスポート完了"
+  },
+  "alreadyRunning": {
+    "message": "すでにエクスポートが実行中です。"
+  },
+  "noBookmarksFound": {
+    "message": "ブックマークカードが見つかりませんでした。ページの読み込みを待ってから再試行してください。"
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ 件をダウンロードフォルダーに保存しました。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

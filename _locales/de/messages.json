@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Lokaler X-Lesezeichen-Export"
+  },
+  "appDescription": {
+    "message": "Exportiert sichtbare X-Lesezeichen als JSON, CSV oder Markdown, ohne API-Schlüssel oder Backend."
+  },
+  "localOnly": {
+    "message": "NUR LOKAL"
+  },
+  "popupTitle": {
+    "message": "X-Lesezeichen exportieren"
+  },
+  "intro": {
+    "message": "Liest Lesezeichenkarten von der geöffneten X-Lesezeichenseite. Passwörter, Cookies und Sitzungstoken werden nicht erfasst."
+  },
+  "formatLabel": {
+    "message": "Exportformat"
+  },
+  "formatJson": {
+    "message": "JSON (empfohlen)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Erweiterte Einstellungen"
+  },
+  "delayLabel": {
+    "message": "Wartezeit zwischen Scrollvorgängen"
+  },
+  "delay1200": {
+    "message": "1,2 Sekunden"
+  },
+  "delay1800": {
+    "message": "1,8 Sekunden (empfohlen)"
+  },
+  "delay2500": {
+    "message": "2,5 Sekunden"
+  },
+  "idleLabel": {
+    "message": "Stoppen, wenn keine neuen Einträge erscheinen"
+  },
+  "idle6": {
+    "message": "6 Durchläufe"
+  },
+  "idle10": {
+    "message": "10 Durchläufe (empfohlen)"
+  },
+  "idle15": {
+    "message": "15 Durchläufe"
+  },
+  "maxBookmarksLabel": {
+    "message": "Maximale Lesezeichen (0 = unbegrenzt)"
+  },
+  "startButton": {
+    "message": "Export starten"
+  },
+  "initialStatus": {
+    "message": "Öffne zuerst x.com/i/bookmarks."
+  },
+  "privacyText": {
+    "message": "Datenschutz: Die Daten werden nur im aktiven Tab verarbeitet und direkt auf dein Gerät geladen. Es gibt kein Backend."
+  },
+  "checkingTab": {
+    "message": "Aktiver Tab wird geprüft..."
+  },
+  "openBookmarksError": {
+    "message": "Öffne zuerst x.com/i/bookmarks und versuche es erneut."
+  },
+  "exportCouldNotStart": {
+    "message": "Der Export konnte nicht gestartet werden."
+  },
+  "startedStatus": {
+    "message": "Der Export läuft. Lass den Tab geöffnet; der Fortschritt erscheint unten rechts."
+  },
+  "panelBadge": {
+    "message": "LOKALER EXPORT"
+  },
+  "panelRunningTitle": {
+    "message": "Lesezeichen werden gelesen"
+  },
+  "stopButton": {
+    "message": "Stoppen"
+  },
+  "closeButton": {
+    "message": "Schließen"
+  },
+  "recordsFound": {
+    "message": "eindeutige Lesezeichen gefunden"
+  },
+  "keepOpen": {
+    "message": "Lass diesen Tab geöffnet. Die Daten werden nur hier verarbeitet."
+  },
+  "stopping": {
+    "message": "Der Export wird gestoppt. Gefundene Einträge werden gespeichert..."
+  },
+  "scanProgress": {
+    "message": "Scan-Durchlauf $CYCLE$. Durchläufe ohne neue Einträge: $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Export fehlgeschlagen"
+  },
+  "panelCompleteTitle": {
+    "message": "Export abgeschlossen"
+  },
+  "alreadyRunning": {
+    "message": "Ein Export läuft bereits."
+  },
+  "noBookmarksFound": {
+    "message": "Keine Lesezeichenkarten gefunden. Warte, bis die Seite geladen ist, und versuche es erneut."
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ Einträge wurden im Downloads-Ordner gespeichert.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

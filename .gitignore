@@ -1,0 +1,10 @@
+.DS_Store
+.tests-output/
+dist/
+.venv/
+.env
+.env.*
+*.pem
+*.key
+RELATED-PROJECTS.md
+.private/

@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Yerel X Bookmark Dışa Aktarıcı"
+  },
+  "appDescription": {
+    "message": "X bookmark kartlarını API anahtarı veya sunucu kullanmadan JSON, CSV ya da Markdown olarak dışa aktarır."
+  },
+  "localOnly": {
+    "message": "YALNIZCA YEREL"
+  },
+  "popupTitle": {
+    "message": "X Bookmark Dışa Aktarıcı"
+  },
+  "intro": {
+    "message": "Açık X bookmark sayfasındaki kartları okur. Şifre, cookie veya oturum token'ı toplamaz."
+  },
+  "formatLabel": {
+    "message": "Dosya biçimi"
+  },
+  "formatJson": {
+    "message": "JSON (önerilen)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Gelişmiş ayarlar"
+  },
+  "delayLabel": {
+    "message": "Kaydırmalar arasında bekle"
+  },
+  "delay1200": {
+    "message": "1,2 saniye"
+  },
+  "delay1800": {
+    "message": "1,8 saniye (önerilen)"
+  },
+  "delay2500": {
+    "message": "2,5 saniye"
+  },
+  "idleLabel": {
+    "message": "Yeni kayıt gelmeyince dur"
+  },
+  "idle6": {
+    "message": "6 tur"
+  },
+  "idle10": {
+    "message": "10 tur (önerilen)"
+  },
+  "idle15": {
+    "message": "15 tur"
+  },
+  "maxBookmarksLabel": {
+    "message": "En fazla bookmark (0 = sınırsız)"
+  },
+  "startButton": {
+    "message": "Dışa aktarmayı başlat"
+  },
+  "initialStatus": {
+    "message": "Önce x.com/i/bookmarks sayfasını aç."
+  },
+  "privacyText": {
+    "message": "Gizlilik: Veriler yalnızca açık sekmede işlenir ve doğrudan cihazına indirilir. Haricî sunucu kullanılmaz."
+  },
+  "checkingTab": {
+    "message": "Açık sekme kontrol ediliyor..."
+  },
+  "openBookmarksError": {
+    "message": "Önce x.com/i/bookmarks sayfasını açıp tekrar dene."
+  },
+  "exportCouldNotStart": {
+    "message": "Dışa aktarma başlatılamadı."
+  },
+  "startedStatus": {
+    "message": "Dışa aktarma başladı. Sekmeyi açık tut; ilerleme sağ alt köşede görünür."
+  },
+  "panelBadge": {
+    "message": "YEREL DIŞA AKTARMA"
+  },
+  "panelRunningTitle": {
+    "message": "Bookmark'lar okunuyor"
+  },
+  "stopButton": {
+    "message": "Durdur"
+  },
+  "closeButton": {
+    "message": "Kapat"
+  },
+  "recordsFound": {
+    "message": "benzersiz bookmark bulundu"
+  },
+  "keepOpen": {
+    "message": "Bu sekmeyi açık tut. Veriler yalnızca bu sekmede işleniyor."
+  },
+  "stopping": {
+    "message": "Durduruluyor. Bulunan kayıtlar dosyaya yazılacak..."
+  },
+  "scanProgress": {
+    "message": "Tarama turu $CYCLE$. Yeni kayıt gelmeyen tur: $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Dışa aktarma başarısız"
+  },
+  "panelCompleteTitle": {
+    "message": "Dışa aktarma tamamlandı"
+  },
+  "alreadyRunning": {
+    "message": "Bir dışa aktarma zaten çalışıyor."
+  },
+  "noBookmarksFound": {
+    "message": "Bookmark kartı bulunamadı. Sayfanın yüklenmesini bekleyip tekrar dene."
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ kayıt Downloads klasörüne kaydedildi.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}

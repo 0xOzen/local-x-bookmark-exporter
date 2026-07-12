@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #090b10;
+  color: #f3f5f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 360px;
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgba(77, 124, 255, 0.18), transparent 42%),
+    #090b10;
+}
+
+main { padding: 20px; }
+
+.eyebrow {
+  display: inline-flex;
+  padding: 5px 8px;
+  border: 1px solid rgba(80, 230, 160, 0.35);
+  border-radius: 999px;
+  color: #71efb3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+h1 {
+  margin: 12px 0 8px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.intro, #status, .privacy {
+  color: #aab1bd;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  margin: 14px 0;
+  color: #dce1e8;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+label span { color: #7d8795; font-weight: 500; }
+
+select, input {
+  width: 100%;
+  border: 1px solid #282e38;
+  border-radius: 10px;
+  background: #11151d;
+  color: #f3f5f7;
+  padding: 10px;
+  outline: none;
+}
+
+select:focus, input:focus { border-color: #527dff; }
+
+details {
+  margin-top: 12px;
+  border-top: 1px solid #202630;
+  border-bottom: 1px solid #202630;
+  padding: 12px 0;
+}
+
+summary {
+  color: #aab1bd;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+button {
+  width: 100%;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #527dff;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover { background: #668cff; }
+button:disabled { cursor: progress; opacity: 0.65; }
+
+#status.error { color: #ff9e9e; }
+#status.success { color: #71efb3; }
+
+.privacy {
+  margin-top: 14px;
+  padding: 11px;
+  border: 1px solid #202630;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}

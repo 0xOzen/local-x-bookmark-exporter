@@ -1,0 +1,135 @@
+{
+  "appName": {
+    "message": "Esportatore locale dei segnalibri X"
+  },
+  "appDescription": {
+    "message": "Esporta i segnalibri X visibili in JSON, CSV o Markdown senza chiavi API né server esterni."
+  },
+  "localOnly": {
+    "message": "SOLO IN LOCALE"
+  },
+  "popupTitle": {
+    "message": "Esportatore dei segnalibri X"
+  },
+  "intro": {
+    "message": "Legge le schede dalla pagina dei segnalibri X aperta. Non raccoglie password, cookie o token di sessione."
+  },
+  "formatLabel": {
+    "message": "Formato di esportazione"
+  },
+  "formatJson": {
+    "message": "JSON (consigliato)"
+  },
+  "formatCsv": {
+    "message": "CSV"
+  },
+  "formatMarkdown": {
+    "message": "Markdown"
+  },
+  "advancedSettings": {
+    "message": "Impostazioni avanzate"
+  },
+  "delayLabel": {
+    "message": "Attesa tra gli scorrimenti"
+  },
+  "delay1200": {
+    "message": "1,2 secondi"
+  },
+  "delay1800": {
+    "message": "1,8 secondi (consigliato)"
+  },
+  "delay2500": {
+    "message": "2,5 secondi"
+  },
+  "idleLabel": {
+    "message": "Interrompi quando non arrivano nuovi elementi"
+  },
+  "idle6": {
+    "message": "6 passaggi"
+  },
+  "idle10": {
+    "message": "10 passaggi (consigliato)"
+  },
+  "idle15": {
+    "message": "15 passaggi"
+  },
+  "maxBookmarksLabel": {
+    "message": "Numero massimo di segnalibri (0 = illimitato)"
+  },
+  "startButton": {
+    "message": "Avvia esportazione"
+  },
+  "initialStatus": {
+    "message": "Apri prima x.com/i/bookmarks."
+  },
+  "privacyText": {
+    "message": "Privacy: I dati vengono elaborati solo nella scheda attiva e scaricati direttamente sul dispositivo. Non viene usato alcun server esterno."
+  },
+  "checkingTab": {
+    "message": "Controllo della scheda attiva..."
+  },
+  "openBookmarksError": {
+    "message": "Apri prima x.com/i/bookmarks e riprova."
+  },
+  "exportCouldNotStart": {
+    "message": "Impossibile avviare l'esportazione."
+  },
+  "startedStatus": {
+    "message": "Esportazione avviata. Lascia aperta la scheda; l'avanzamento appare in basso a destra."
+  },
+  "panelBadge": {
+    "message": "ESPORTAZIONE LOCALE"
+  },
+  "panelRunningTitle": {
+    "message": "Lettura dei segnalibri"
+  },
+  "stopButton": {
+    "message": "Interrompi"
+  },
+  "closeButton": {
+    "message": "Chiudi"
+  },
+  "recordsFound": {
+    "message": "segnalibri unici trovati"
+  },
+  "keepOpen": {
+    "message": "Lascia aperta questa scheda. I dati vengono elaborati solo qui."
+  },
+  "stopping": {
+    "message": "Interruzione in corso. Gli elementi trovati verranno salvati in un file..."
+  },
+  "scanProgress": {
+    "message": "Passaggio $CYCLE$. Passaggi senza nuovi elementi: $IDLE$.",
+    "placeholders": {
+      "cycle": {
+        "content": "$1",
+        "example": "3"
+      },
+      "idle": {
+        "content": "$2",
+        "example": "1"
+      }
+    }
+  },
+  "panelFailedTitle": {
+    "message": "Esportazione non riuscita"
+  },
+  "panelCompleteTitle": {
+    "message": "Esportazione completata"
+  },
+  "alreadyRunning": {
+    "message": "È già in corso un'esportazione."
+  },
+  "noBookmarksFound": {
+    "message": "Nessuna scheda di segnalibro trovata. Attendi il caricamento della pagina e riprova."
+  },
+  "downloadComplete": {
+    "message": "$COUNT$ elementi sono stati salvati nella cartella Download.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "250"
+      }
+    }
+  }
+}
