@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "sourcePage": "https://x.com/i/bookmarks",
+    "method": "local DOM scrolling",
+    "completeness": "best-effort; X does not expose a total count to this exporter",
+    "startedAt": "2026-07-12T12:00:00.000Z",
+    "exportedAt": "2026-07-12T12:04:10.000Z",
+    "count": 1,
+    "stopReason": "no-new-cards",
+    "options": {"format": "json", "scrollDelayMs": 1800, "maxIdleRounds": 10, "maxBookmarks": 0}
+  },
+  "bookmarks": [
+    {"id": "1234567890123456789", "url": "https://x.com/../escape/status/1234567890123456789", "authorHandle": "../escape", "authorName": "Example", "postedAt": "2026-07-10T10:00:00.000Z", "text": "One", "language": "en", "mediaUrls": [], "capturedAt": "2026-07-12T12:00:05.000Z"}
+  ]
+}

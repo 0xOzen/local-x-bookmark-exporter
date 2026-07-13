@@ -33,7 +33,7 @@ blocked_text = [
     (re.compile(r"[A-Za-z]:\\Users\\[^\\\s]+"), "absolute Windows user path"),
     (re.compile(r"\bAli OS\b"), "private operating-system reference"),
     (re.compile(r"\bPersonal Brand\b"), "private project reference"),
-    (re.compile(r"\bObsidian\b"), "private knowledge-system reference"),
+    (re.compile(r"Obsidian Vaults", re.IGNORECASE), "private Obsidian vault path"),
     (re.compile(r"\bdevs-world\b"), "private project reference"),
     (re.compile(r"\bJanus analysis\b", re.IGNORECASE), "private workflow reference"),
     (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "private key material"),

@@ -26,6 +26,7 @@ It supports:
 - partial export when you stop a run
 - an in-page progress panel
 - automatic interface localization based on Chrome's UI language
+- optional local Python companion tools for validating JSON exports and creating Markdown evidence packs
 
 ## Privacy model
 
@@ -58,7 +59,7 @@ Your exported file may contain private bookmark data. Store and share it with th
 The extension is not currently published in the Chrome Web Store. Install it as an unpacked extension:
 
 1. Download an extension package:
-   - Open the [latest GitHub release](https://github.com/0xOzen/local-x-bookmark-exporter/releases/latest), download `local-x-bookmark-exporter-v<version>.zip`, and extract it, or
+   - When a GitHub Release asset is available, open the [latest GitHub release](https://github.com/0xOzen/local-x-bookmark-exporter/releases/latest), download `local-x-bookmark-exporter-v<version>.zip`, and extract it, or
    - Click **Code > Download ZIP** on the repository page and extract it, or
    - Clone the source with:
 
@@ -147,6 +148,37 @@ A JSON export has this shape:
 
 `capturedAt` is the time the extension read the rendered card. X does not expose the original time when you added a bookmark to this DOM-based exporter.
 
+## Local companion tools
+
+The repository also includes two optional, clean-room Python companion tools. They use only the Python standard library, operate on local files, and do not call X, open a browser, use AI services, mutate input exports, or claim that an export is complete.
+
+### X Bookmark Archive Doctor
+
+Archive Doctor validates a local JSON export before you rely on it or transform it. It checks the exporter schema version, metadata/count consistency, required fields, unique post IDs, canonical X status URLs, UTC timestamps, rendered media URL shape, hostile strings, future schemas, and path-traversal-shaped values. It also parses `meta.sourcePage` as a URL and accepts only HTTPS `x.com` or `www.x.com` bookmark routes at `/i/bookmarks` or `/i/bookmarks/...`; query strings are allowed, credentials, non-default ports, fragments, prefix-confused paths, and other hosts are rejected. It computes the input SHA-256 and writes deterministic JSON and Markdown receipts.
+
+```bash
+python3 tools/x_bookmark_archive_doctor.py examples/x-bookmark-export-fictional.json \
+  --json-out examples/archive-doctor-receipt.json \
+  --markdown-out examples/archive-doctor-receipt.md
+```
+
+The command exits with a non-zero status for invalid, duplicate, count-mismatched, hostile-string, path-traversal, or unsupported future-schema inputs.
+
+### X Bookmark Evidence Pack
+
+Evidence Pack requires a valid local JSON export and creates a new Obsidian-compatible plain Markdown directory with an index, one note per bookmark, a manifest, and file hashes. It refuses to write if the output path already exists, including files, empty or non-empty directories, symlinks, repository roots, or home directories; choose a new directory name for each pack. Filenames are sanitized and deterministic, with collision handling. Optional tags must be 1-64 ASCII characters, start with a letter or digit, and then use only letters, digits, dot, underscore, or hyphen; tags are deduplicated and sorted. The pack records source/provenance fields such as source URL, author, timestamps, language, media links, exporter completeness metadata, and export SHA-256.
+
+Use a fresh output path outside the shipped `examples/evidence-pack` sample output. The output path must not already exist; if you run Evidence Pack again, choose a new output directory name for another run.
+
+```bash
+OUTPUT_DIR="$(mktemp -d)/x-bookmark-evidence-pack-demo"
+python3 tools/x_bookmark_evidence_pack.py examples/x-bookmark-export-fictional.json "$OUTPUT_DIR" \
+  --tag fictional-fixture \
+  --tag local-export
+```
+
+Public examples in `examples/` and `tests/fixtures/` are fictional fixtures only. Do not publish real bookmark exports or generated notes that contain private account data.
+
 ## Supported interface languages
 
 Chrome selects the extension locale from your browser UI language. The current package includes:
@@ -190,6 +222,14 @@ The JSON metadata records the stop reason and explicitly labels the result as be
 
 The runtime code does not use `fetch`, XHR, WebSocket, cookie APIs, request interception, remote code, or `eval`.
 
+## Packaging rules
+
+The Chrome extension release ZIP built by `scripts/package_extension.py` is runtime-only and loadable as an unpacked extension. For v1.2.0 it is named `local-x-bookmark-exporter-v1.2.0.zip`. It intentionally excludes tests, Markdown docs, Python companion tools, sample outputs, GitHub metadata, dependency inventory, SBOM, and internal evidence.
+
+If you need a local companion-tool artifact, use `scripts/package_companion_tools.py`. That creates a separate deterministic source/tool ZIP named `x-bookmark-companion-tools-v0.1.0.zip` containing the Python modules, CLI wrappers, public support/provenance docs, dependency inventory, SBOM, and fictional examples. It is not the Chrome extension package and should not be loaded into Chrome.
+
+`DEPENDENCIES.md` and `sbom.cdx.json` document the release-candidate dependency boundary: the extension runtime has no bundled third-party runtime dependencies, the companion tools use only the Python standard library, and optional Pillow usage is build-only for icon regeneration.
+
 ## Repository layout
 
 ```text
@@ -197,6 +237,10 @@ _locales/                 Chrome localization files
 icons/                    Extension icons
 scripts/generate_icons.py Optional icon generator
 scripts/package_extension.py Build the GitHub Release ZIP
+scripts/package_companion_tools.py Build a separate local companion-tool source ZIP
+x_bookmark_tools/          Standard-library Archive Doctor and Evidence Pack modules
+tools/                     CLI entry points for local companion tools
+examples/                  Fictional companion-tool fixtures and deterministic sample output
 content.js                Scroll loop, progress panel, local download
 scraper.js                DOM parsing and record extraction
 lib.js                    Serialization and file helpers
@@ -232,6 +276,10 @@ The suite checks:
 - CSV escaping and UTF-8 BOM output
 - real Chrome execution through a local fixture
 - exact runtime-only contents of the GitHub Release ZIP
+- Archive Doctor validation, adversarial fixtures, CLI help, and deterministic receipts
+- Evidence Pack valid-input requirement, new-output-directory refusal, tag grammar, safe filenames, manifest hashes, CLI help, and deterministic repeated runs
+- separate companion-tool source ZIP contents
+- deterministic CycloneDX SBOM JSON contents
 - public-release paths and secret patterns when run inside Git
 
 The tests use only the standard Python library for browser control. The optional icon generator uses Pillow:

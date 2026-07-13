@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "sourcePage": "https://x.com/i/bookmarks",
+    "method": "local DOM scrolling",
+    "completeness": "best-effort; X does not expose a total count to this exporter",
+    "startedAt": "2026-07-12T12:00:00.000Z",
+    "exportedAt": "2026-07-12T12:04:10.000Z",
+    "count": 2,
+    "stopReason": "no-new-cards",
+    "options": {
+      "format": "json",
+      "scrollDelayMs": 1800,
+      "maxIdleRounds": 10,
+      "maxBookmarks": 0
+    }
+  },
+  "bookmarks": [
+    {
+      "id": "1234567890123456789",
+      "url": "https://x.com/example_alpha/status/1234567890123456789",
+      "authorHandle": "example_alpha",
+      "authorName": "Example Alpha",
+      "postedAt": "2026-07-10T10:00:00.000Z",
+      "text": "Fictional note about local-first archive practice.",
+      "language": "en",
+      "mediaUrls": [
+        "https://pbs.twimg.com/media/fictional-alpha.jpg"
+      ],
+      "capturedAt": "2026-07-12T12:00:05.000Z"
+    },
+    {
+      "id": "9876543210987654321",
+      "url": "https://x.com/example_beta/status/9876543210987654321",
+      "authorHandle": "example_beta",
+      "authorName": "Example Beta",
+      "postedAt": "2026-07-11T11:30:00.000Z",
+      "text": "Fictional reminder: exported bookmarks are private archives.",
+      "language": "en",
+      "mediaUrls": [],
+      "capturedAt": "2026-07-12T12:01:05.000Z"
+    }
+  ]
+}

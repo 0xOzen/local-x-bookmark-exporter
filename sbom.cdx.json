@@ -1,0 +1,47 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:1f72f638-3dd5-56f0-9700-1bff3ed5b9a1",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-13T00:00:00Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:github/0xOzen/local-x-bookmark-exporter@v1.2.0",
+      "name": "local-x-bookmark-exporter",
+      "version": "1.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "releaseCandidate",
+        "value": "true"
+      },
+      {
+        "name": "extensionRuntime.thirdPartyDependencies",
+        "value": "none"
+      },
+      {
+        "name": "companionTools.runtimeDependencies",
+        "value": "python-standard-library-only"
+      },
+      {
+        "name": "optionalBuildTooling",
+        "value": "Pillow (MIT-CMU) only for scripts/generate_icons.py icon regeneration; not pinned, not bundled, not runtime-required; https://pypi.org/project/pillow/; https://github.com/python-pillow/Pillow/blob/main/LICENSE"
+      }
+    ]
+  },
+  "components": [],
+  "dependencies": [
+    {
+      "ref": "pkg:github/0xOzen/local-x-bookmark-exporter@v1.2.0",
+      "dependsOn": []
+    }
+  ]
+}

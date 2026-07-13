@@ -11,6 +11,7 @@ version = manifest["version"]
 output_dir = ROOT / "dist"
 output_dir.mkdir(parents=True, exist_ok=True)
 output = output_dir / f"local-x-bookmark-exporter-v{version}.zip"
+FIXED_TIME = (2026, 1, 1, 0, 0, 0)
 
 files = [
     ROOT / "manifest.json",
@@ -29,6 +30,10 @@ with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compressleve
     for path in files:
         if not path.is_file():
             raise FileNotFoundError(path)
-        archive.write(path, path.relative_to(ROOT).as_posix())
+        relative = path.relative_to(ROOT).as_posix()
+        info = zipfile.ZipInfo(relative, FIXED_TIME)
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o644 << 16
+        archive.writestr(info, path.read_bytes())
 
 print(output)

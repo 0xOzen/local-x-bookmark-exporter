@@ -1,0 +1,14 @@
+{
+  "bookmark_count": 2,
+  "claimed_count": 2,
+  "completeness": "best-effort; X does not expose a total count to this exporter",
+  "errors": [],
+  "input_sha256": "0be63edb5eb17b66bb034d5877b6da9af9917e98e38dcd4a48e15d9c0d3f293c",
+  "receiptVersion": 1,
+  "schemaVersion": 1,
+  "source_file": "x-bookmark-export-fictional.json",
+  "stop_reason": "no-new-cards",
+  "tool": "x-bookmark-archive-doctor",
+  "valid": true,
+  "warnings": []
+}

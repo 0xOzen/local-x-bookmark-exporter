@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
 version = manifest["version"]
+FIXED_TIME = (2026, 1, 1, 0, 0, 0)
 
 subprocess.run(["python3", str(ROOT / "scripts" / "package_extension.py")], cwd=ROOT, check=True, capture_output=True)
 archive_path = ROOT / "dist" / f"local-x-bookmark-exporter-v{version}.zip"
@@ -15,6 +16,7 @@ assert archive_path.is_file()
 with zipfile.ZipFile(archive_path) as archive:
     names = set(archive.namelist())
     packaged_manifest = json.loads(archive.read("manifest.json"))
+    metadata = {info.filename: (info.date_time, info.external_attr >> 16) for info in archive.infolist()}
 
 required = {
     "manifest.json",
@@ -34,6 +36,8 @@ required.update(f"_locales/{locale}/messages.json" for locale in ("en", "tr", "d
 
 assert names == required, (sorted(names), sorted(required))
 assert packaged_manifest["version"] == version
+assert all(date_time == FIXED_TIME for date_time, _mode in metadata.values())
+assert all(mode == 0o644 for _date_time, mode in metadata.values())
 assert not any(name.startswith(("tests/", "scripts/", ".github/")) for name in names)
 assert not any(name.endswith(".md") for name in names)
 

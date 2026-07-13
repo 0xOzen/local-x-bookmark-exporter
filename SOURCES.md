@@ -41,6 +41,26 @@ Source: https://groups.google.com/a/chromium.org/g/chromium-extensions/c/1-g8EFx
 
 Because of that change, automated tests validate the manifest policy and runtime behavior separately. The final unpacked installation is performed through Chrome's visible Developer mode flow.
 
+## Companion-tool format references
+
+The Python companion tools were implemented clean-room with the Python standard library. They use this repository's documented JSON export shape as the source of truth and do not copy code, tests, examples, branding, or generated assets from external projects.
+
+The release-candidate dependency/license inventory is in `DEPENDENCIES.md`, and the deterministic CycloneDX SBOM is in `sbom.cdx.json`. They record no bundled third-party runtime dependencies for the extension and Python standard-library-only runtime behavior for the companion tools.
+
+Pattern references reviewed:
+
+- Obsidian Importer, source: https://github.com/obsidianmd/obsidian-importer
+
+Useful idea:
+
+- portable file-based Markdown import/output can remain useful without a cloud service or proprietary database
+
+Not adopted:
+
+- Obsidian-specific APIs, plugins, packaging, importer code, or endorsement language
+
+The Evidence Pack output is described only as Obsidian-compatible plain Markdown. That is a file-format compatibility statement, not affiliation, sponsorship, or endorsement.
+
 ## Project decisions
 
 Adopted:
@@ -60,6 +80,7 @@ Rejected:
 - analytics and telemetry
 - persistent host permissions
 - remote code execution
+- browser automation, network calls, AI summarization, or input mutation in local companion tools
 
 Parked until there is evidence of need:
 

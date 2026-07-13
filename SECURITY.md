@@ -6,7 +6,8 @@ Security fixes are applied to the latest release on the default branch.
 
 | Version | Supported |
 | --- | --- |
-| 1.1.x | Yes |
+| 1.2.x | Yes |
+| 1.1.x | No |
 | Older versions | No |
 
 ## Report a vulnerability
@@ -50,6 +51,28 @@ The runtime must not:
 
 Automated tests scan the runtime and manifest for these boundaries.
 
+## Companion-tool security model
+
+The optional Python companion tools are designed to:
+
+- read local JSON exports produced by this exporter
+- validate exporter schema, metadata, IDs, URLs, timestamps, media URL shape, duplicates, hostile strings, and unsupported future schemas
+- write local deterministic receipts or Markdown evidence packs
+- compute hashes for provenance and repeated-run verification
+
+The companion tools must not:
+
+- call X's official or internal APIs
+- open or automate a browser session
+- upload exports or generated notes to a remote service
+- use AI summarization or enrichment
+- mutate the input export
+- include real bookmark exports in fixtures, examples, tests, screenshots, or public issues
+
+The generated files can still contain private bookmark data when run on a real export. Treat them with the same care as the original export.
+
+Release-candidate dependency evidence is tracked in `DEPENDENCIES.md` and `sbom.cdx.json`. The Chrome extension runtime has no bundled third-party runtime dependencies, the companion tools use the Python standard library only, and optional Pillow usage is limited to build-time icon regeneration.
+
 ## Data handling
 
 Exports remain on the user's device unless the user shares them. The project has no server and cannot recover deleted exports.
@@ -63,6 +86,8 @@ Export files may contain:
 - media URLs
 
 Users should treat exports as private account archives.
+
+Archive Doctor receipts and Evidence Pack Markdown files may include source URLs, handles, timestamps, media links, and post text from the export. Do not publish those outputs unless they were generated from fictional or fully sanitized data.
 
 ## Known limitations that are not vulnerabilities
 

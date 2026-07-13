@@ -10,7 +10,11 @@ printf '%s\n' "PASS JavaScript syntax: 5 files"
 
 python3 "$ROOT/tests/security_audit.py"
 python3 "$ROOT/tests/public_release_audit.py"
+python3 "$ROOT/tests/docs_examples_audit.py"
+python3 "$ROOT/tests/sbom_audit.py"
+python3 "$ROOT/tests/test_companion_tools.py"
 python3 "$ROOT/tests/package_audit.py"
+python3 "$ROOT/tests/companion_package_audit.py"
 python3 "$ROOT/tests/run_browser_test.py"
 
 printf '%s\n' "ALL TESTS PASSED"
