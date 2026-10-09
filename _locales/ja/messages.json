@@ -60,7 +60,7 @@
     "message": "エクスポート開始"
   },
   "initialStatus": {
-    "message": "まず x.com/i/bookmarks を開いてください。"
+    "message": "まず x.com/i/history/bookmarks/ を開いてください。"
   },
   "privacyText": {
     "message": "プライバシー: データはアクティブなタブ内だけで処理され、端末に直接ダウンロードされます。外部サーバーは使いません。"
@@ -69,7 +69,7 @@
     "message": "アクティブなタブを確認しています..."
   },
   "openBookmarksError": {
-    "message": "x.com/i/bookmarks を開いてから、もう一度お試しください。"
+    "message": "x.com/i/history/bookmarks/ を開いてから、もう一度お試しください。"
   },
   "exportCouldNotStart": {
     "message": "エクスポートを開始できませんでした。"

@@ -60,7 +60,7 @@
     "message": "开始导出"
   },
   "initialStatus": {
-    "message": "请先打开 x.com/i/bookmarks。"
+    "message": "请先打开 x.com/i/history/bookmarks/。"
   },
   "privacyText": {
     "message": "隐私：数据仅在当前标签页中处理，并直接下载到你的设备。不会使用外部服务器。"
@@ -69,7 +69,7 @@
     "message": "正在检查当前标签页..."
   },
   "openBookmarksError": {
-    "message": "请先打开 x.com/i/bookmarks，然后重试。"
+    "message": "请先打开 x.com/i/history/bookmarks/，然后重试。"
   },
   "exportCouldNotStart": {
     "message": "无法开始导出。"

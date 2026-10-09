@@ -6,6 +6,16 @@ The project follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Support X's `/i/history/bookmarks/` route in the popup and local archive validation while preserving legacy `/i/bookmarks` and bookmark folder routes.
+- Update bookmark-page guidance in all nine interface languages and installation documentation.
+- Reject non-HTTPS URLs, lookalike hosts, credentials, non-default ports, fragments and prefix-confused bookmark paths before script injection.
+
+### Added
+
+- Popup export-start regression coverage for accepted and rejected routes, plus companion validation and Evidence Pack checks for the new bookmark route.
+
 ## [1.2.0] - 2026-07-13
 
 ### Added

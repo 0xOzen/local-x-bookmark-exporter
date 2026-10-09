@@ -60,7 +60,7 @@
     "message": "Iniciar exportación"
   },
   "initialStatus": {
-    "message": "Abre primero x.com/i/bookmarks."
+    "message": "Abre primero x.com/i/history/bookmarks/."
   },
   "privacyText": {
     "message": "Privacidad: Los datos se procesan solo en la pestaña activa y se descargan directamente en tu dispositivo. No se usa ningún servidor externo."
@@ -69,7 +69,7 @@
     "message": "Comprobando la pestaña activa..."
   },
   "openBookmarksError": {
-    "message": "Abre primero x.com/i/bookmarks y vuelve a intentarlo."
+    "message": "Abre primero x.com/i/history/bookmarks/ y vuelve a intentarlo."
   },
   "exportCouldNotStart": {
     "message": "No se pudo iniciar la exportación."

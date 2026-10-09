@@ -86,10 +86,11 @@ Chrome shows a warning for extensions installed in Developer mode. That is expec
 2. Open:
 
    ```text
-   https://x.com/i/bookmarks
+   https://x.com/i/history/bookmarks/
    ```
 
 3. Wait for the bookmark timeline to load.
+   The legacy `/i/bookmarks` route and bookmark folder routes remain supported.
 4. Click the extension icon.
 5. Choose JSON, CSV, or Markdown.
 6. Click **Start export**.
@@ -154,7 +155,7 @@ The repository also includes two optional, clean-room Python companion tools. Th
 
 ### X Bookmark Archive Doctor
 
-Archive Doctor validates a local JSON export before you rely on it or transform it. It checks the exporter schema version, metadata/count consistency, required fields, unique post IDs, canonical X status URLs, UTC timestamps, rendered media URL shape, hostile strings, future schemas, and path-traversal-shaped values. It also parses `meta.sourcePage` as a URL and accepts only HTTPS `x.com` or `www.x.com` bookmark routes at `/i/bookmarks` or `/i/bookmarks/...`; query strings are allowed, credentials, non-default ports, fragments, prefix-confused paths, and other hosts are rejected. It computes the input SHA-256 and writes deterministic JSON and Markdown receipts.
+Archive Doctor validates a local JSON export before you rely on it or transform it. It checks the exporter schema version, metadata/count consistency, required fields, unique post IDs, canonical X status URLs, UTC timestamps, rendered media URL shape, hostile strings, future schemas, and path-traversal-shaped values. It also parses `meta.sourcePage` as a URL and accepts only HTTPS `x.com` or `www.x.com` bookmark routes at `/i/history/bookmarks` or legacy `/i/bookmarks`, including slash-delimited subroutes; query strings are allowed, credentials, non-default ports, fragments, prefix-confused paths, and other hosts are rejected. It computes the input SHA-256 and writes deterministic JSON and Markdown receipts.
 
 ```bash
 python3 tools/x_bookmark_archive_doctor.py examples/x-bookmark-export-fictional.json \
@@ -211,7 +212,7 @@ The JSON metadata records the stop reason and explicitly labels the result as be
 
 ## How it works
 
-1. The popup verifies that the active page is an `x.com/i/bookmarks` route.
+1. The popup verifies that the active page is an HTTPS `x.com` or `www.x.com` bookmark route at `/i/history/bookmarks` or legacy `/i/bookmarks`, including slash-delimited subroutes.
 2. Chrome grants temporary `activeTab` access because the user clicked the extension.
 3. The extension injects local parsing, localization, and export scripts.
 4. The scraper reads `article[data-testid="tweet"]` cards that contain a bookmark-removal control.

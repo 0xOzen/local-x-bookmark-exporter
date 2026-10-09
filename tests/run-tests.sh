@@ -7,6 +7,7 @@ for file in lib.js scraper.js i18n.js content.js popup.js; do
   node --check "$ROOT/$file"
 done
 printf '%s\n' "PASS JavaScript syntax: 5 files"
+node "$ROOT/tests/test_popup_routes.js"
 
 python3 "$ROOT/tests/security_audit.py"
 python3 "$ROOT/tests/public_release_audit.py"

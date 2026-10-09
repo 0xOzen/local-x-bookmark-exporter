@@ -72,7 +72,10 @@ def is_allowed_source_page(value: Any) -> bool:
         return False
     if parsed.hostname not in {"x.com", "www.x.com"}:
         return False
-    return parsed.path == "/i/bookmarks" or parsed.path.startswith("/i/bookmarks/")
+    return any(
+        parsed.path == route or parsed.path.startswith(route + "/")
+        for route in ("/i/bookmarks", "/i/history/bookmarks")
+    )
 
 
 @dataclass(frozen=True)

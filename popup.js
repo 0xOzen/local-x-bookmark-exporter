@@ -16,7 +16,11 @@
     try {
       const parsed = new URL(url);
       const allowedHost = parsed.hostname === "x.com" || parsed.hostname === "www.x.com";
-      return allowedHost && parsed.pathname.startsWith("/i/bookmarks");
+      const allowedRoute = ["/i/bookmarks", "/i/history/bookmarks"].some(
+        (route) => parsed.pathname === route || parsed.pathname.startsWith(`${route}/`)
+      );
+      return parsed.protocol === "https:" && allowedHost && allowedRoute &&
+        !parsed.username && !parsed.password && !parsed.port && !parsed.hash;
     } catch (_error) {
       return false;
     }

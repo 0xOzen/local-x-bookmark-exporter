@@ -76,12 +76,23 @@ def test_archive_doctor_rejects_invalid_exports_safely():
 
 def test_archive_doctor_validates_source_page_with_strict_url_policy():
     valid_source_pages = [
+        "https://x.com/i/history/bookmarks/",
+        "https://x.com/i/history/bookmarks",
+        "https://www.x.com/i/history/bookmarks/?cursor=abc123",
+        "https://x.com:443/i/history/bookmarks/folder/123?sort=latest",
         "https://x.com/i/bookmarks",
         "https://x.com:443/i/bookmarks",
         "https://www.x.com/i/bookmarks?cursor=abc123",
         "https://x.com/i/bookmarks/folder/123?sort=latest",
     ]
     invalid_source_pages = [
+        "https://x.com/i/history/bookmarksevil",
+        "https://x.com/i/history",
+        "http://x.com/i/history/bookmarks/",
+        "https://x.com.evil.example/i/history/bookmarks/",
+        "https://user:pass@x.com/i/history/bookmarks/",
+        "https://x.com:444/i/history/bookmarks/",
+        "https://x.com/i/history/bookmarks/#fragment",
         "http://x.com/i/bookmarks",
         "https://evil.example/i/bookmarks",
         "https://x.com.evil.example/i/bookmarks",
@@ -95,6 +106,8 @@ def test_archive_doctor_validates_source_page_with_strict_url_policy():
         for index, source_page in enumerate(valid_source_pages):
             receipt = build_receipt(write_export_with(tmp / f"valid-{index}", sourcePage=source_page))
             assert receipt["valid"] is True, (source_page, receipt["errors"])
+            pack = build_evidence_pack(tmp / f"valid-{index}" / "export.json", tmp / f"pack-{index}")
+            assert (pack.output_dir / "index.md").is_file()
         for index, source_page in enumerate(invalid_source_pages):
             receipt = build_receipt(write_export_with(tmp / f"invalid-{index}", sourcePage=source_page))
             assert receipt["valid"] is False, source_page

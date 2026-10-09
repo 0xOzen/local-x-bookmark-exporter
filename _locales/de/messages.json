@@ -60,7 +60,7 @@
     "message": "Export starten"
   },
   "initialStatus": {
-    "message": "Öffne zuerst x.com/i/bookmarks."
+    "message": "Öffne zuerst x.com/i/history/bookmarks/."
   },
   "privacyText": {
     "message": "Datenschutz: Die Daten werden nur im aktiven Tab verarbeitet und direkt auf dein Gerät geladen. Es gibt kein Backend."
@@ -69,7 +69,7 @@
     "message": "Aktiver Tab wird geprüft..."
   },
   "openBookmarksError": {
-    "message": "Öffne zuerst x.com/i/bookmarks und versuche es erneut."
+    "message": "Öffne zuerst x.com/i/history/bookmarks/ und versuche es erneut."
   },
   "exportCouldNotStart": {
     "message": "Der Export konnte nicht gestartet werden."

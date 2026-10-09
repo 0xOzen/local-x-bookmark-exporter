@@ -60,7 +60,7 @@
     "message": "Démarrer l'export"
   },
   "initialStatus": {
-    "message": "Ouvrez d'abord x.com/i/bookmarks."
+    "message": "Ouvrez d'abord x.com/i/history/bookmarks/."
   },
   "privacyText": {
     "message": "Confidentialité : les données sont traitées uniquement dans l'onglet actif et téléchargées directement sur votre appareil. Aucun serveur externe n'est utilisé."
@@ -69,7 +69,7 @@
     "message": "Vérification de l'onglet actif..."
   },
   "openBookmarksError": {
-    "message": "Ouvrez d'abord x.com/i/bookmarks, puis réessayez."
+    "message": "Ouvrez d'abord x.com/i/history/bookmarks/, puis réessayez."
   },
   "exportCouldNotStart": {
     "message": "Impossible de démarrer l'export."

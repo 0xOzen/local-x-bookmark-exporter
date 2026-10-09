@@ -43,10 +43,11 @@ Developer mode ile yüklenen tüm unpacked eklentiler için Chrome uyarı göste
 2. Şu sayfayı aç:
 
    ```text
-   https://x.com/i/bookmarks
+   https://x.com/i/history/bookmarks/
    ```
 
 3. Bookmark listesinin yüklenmesini bekle.
+   Eski `/i/bookmarks` adresi ve bookmark klasörü alt yolları da desteklenir.
 4. Eklenti ikonuna bas.
 5. JSON, CSV veya Markdown biçimini seç.
 6. **Dışa aktarmayı başlat** düğmesine bas.
@@ -65,7 +66,7 @@ Yardımcı araçlar için ayrı deterministik kaynak/araç ZIP'i `x-bookmark-com
 
 ### X Bookmark Archive Doctor
 
-Archive Doctor, JSON export dosyasını başka bir işlemde kullanmadan önce doğrular. Şema sürümünü, metadata sayısını, zorunlu alanları, tekrar eden post ID'lerini, canonical X URL'lerini, UTC timestamp alanlarını, media URL biçimini ve tehlikeli stringleri kontrol eder. `meta.sourcePage` değerini URL olarak ayrıştırır; yalnızca HTTPS `x.com` veya `www.x.com` üzerindeki `/i/bookmarks` ya da `/i/bookmarks/...` route'larını kabul eder. Query string serbesttir; credentials, default olmayan port, fragment, prefix-confused path ve başka host'lar reddedilir. Ayrıca input SHA-256 değerini hesaplar ve deterministik JSON/Markdown makbuzu üretir.
+Archive Doctor, JSON export dosyasını başka bir işlemde kullanmadan önce doğrular. Şema sürümünü, metadata sayısını, zorunlu alanları, tekrar eden post ID'lerini, canonical X URL'lerini, UTC timestamp alanlarını, media URL biçimini ve tehlikeli stringleri kontrol eder. `meta.sourcePage` değerini URL olarak ayrıştırır; yalnızca HTTPS `x.com` veya `www.x.com` üzerindeki `/i/history/bookmarks` ve eski `/i/bookmarks` yollarını, slash ile ayrılan alt yollar dahil, kabul eder. Query string serbesttir; credentials, default olmayan port, fragment, prefix-confused path ve başka host'lar reddedilir. Ayrıca input SHA-256 değerini hesaplar ve deterministik JSON/Markdown makbuzu üretir.
 
 ```bash
 python3 tools/x_bookmark_archive_doctor.py examples/x-bookmark-export-fictional.json \

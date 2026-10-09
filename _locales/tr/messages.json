@@ -60,7 +60,7 @@
     "message": "Dışa aktarmayı başlat"
   },
   "initialStatus": {
-    "message": "Önce x.com/i/bookmarks sayfasını aç."
+    "message": "Önce x.com/i/history/bookmarks/ sayfasını aç."
   },
   "privacyText": {
     "message": "Gizlilik: Veriler yalnızca açık sekmede işlenir ve doğrudan cihazına indirilir. Haricî sunucu kullanılmaz."
@@ -69,7 +69,7 @@
     "message": "Açık sekme kontrol ediliyor..."
   },
   "openBookmarksError": {
-    "message": "Önce x.com/i/bookmarks sayfasını açıp tekrar dene."
+    "message": "Önce x.com/i/history/bookmarks/ sayfasını açıp tekrar dene."
   },
   "exportCouldNotStart": {
     "message": "Dışa aktarma başlatılamadı."

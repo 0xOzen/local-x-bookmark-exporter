@@ -60,7 +60,7 @@
     "message": "Avvia esportazione"
   },
   "initialStatus": {
-    "message": "Apri prima x.com/i/bookmarks."
+    "message": "Apri prima x.com/i/history/bookmarks/."
   },
   "privacyText": {
     "message": "Privacy: I dati vengono elaborati solo nella scheda attiva e scaricati direttamente sul dispositivo. Non viene usato alcun server esterno."
@@ -69,7 +69,7 @@
     "message": "Controllo della scheda attiva..."
   },
   "openBookmarksError": {
-    "message": "Apri prima x.com/i/bookmarks e riprova."
+    "message": "Apri prima x.com/i/history/bookmarks/ e riprova."
   },
   "exportCouldNotStart": {
     "message": "Impossibile avviare l'esportazione."
